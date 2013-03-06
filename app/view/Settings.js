@@ -32,7 +32,7 @@
                 items: [
                     {
                         xtype: 'togglefield',
-                        label: 'Wifi Connection',
+                        label: 'Wifi',
                         name: 'wifi'
                     }
                 ]
