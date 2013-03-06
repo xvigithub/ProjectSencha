@@ -45,14 +45,22 @@
                         xtype: 'button',
                         ui: 'confirm',
                         text: 'Save Product',
-                        width: 200
+                        width: 200,
+                        handler: function ()
+                        {
+                        	Ext.Msg.alert('PROJECT X')
+                        }
                     }
                     ]
                 },
                 {
                     title: 'View',
                     scrollable: 'vertical',
-                    html: 'This is view product'
+                    items: [
+						{
+							html:'This is product view'
+						}
+                    ]
                 }
             ]
         }
