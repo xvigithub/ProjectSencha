@@ -1,10 +1,11 @@
 ﻿Ext.define('CocaCola.view.ProductDetails', {
 	extend: 'Ext.form.Panel',
 	xtype: 'productDetails',
+	fullscreen: true,
 
 	config: {
 		title: 'Details',
-
+	
 		items:
             [
 				{
@@ -50,6 +51,7 @@
                         	xtype: 'selectfield',
                         	name: 'inventorySelection',
                         	label: 'Inv Selection',
+                        	usePicker: false,
                         	options: [
                                 { text: 'Pulled out Items', value: '1' },
                                 { text: 'Transferred Items', value: '2' },
@@ -65,7 +67,7 @@
                         					form = Ext.widget('inventoryDetails');
                         				}
                         				//form.getComponent('inputText').setValue(record.get('text'));
-                        				form.showBy(select, "tl-bl?");
+                        				form.showBy(select, "cc-cc?");
                         			}
                         		}
                         	}

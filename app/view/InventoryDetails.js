@@ -38,6 +38,7 @@
                         xtype: 'selectfield',
                         name: 'inventorySelection',
                         label: 'Inv Selection',
+						usePicker: false,
                         options: [
                             { text: 'S01', value: '1' },
                             { text: 'S02', value: '2' },
