@@ -1,71 +1,68 @@
-﻿Ext.define('Sencha.view.Account', {
+﻿Ext.define('CocaCola.view.Account', {
 	extend: 'Ext.TabPanel',
-	xtype: 'accountPanel',
+	xtype: 'account',
 
-	config:
-        {
-        	iconCls: 'user',
-        	title: 'Account',
+	config: {
+		title: 'User',
+		iconCls: 'user',
+		
+		items: [
+			{
+				xtype: 'formpanel',
+				title: 'My Account',
+				scrollable: 'vertical',
 
-        	items: [
-                {
-                	xtype: 'formpanel',
-                	title: 'My Task',
-                	scrollable: 'vertical',
-                	items: [
-                        {
-                        	xtype: 'fieldset',
-							title: 'Tasks',
-                        	items: [
-                                {
-                                	xtype: 'checkboxfield',
-                                	label: 'Task 1',
-									checked: true
-                                },
-                                {
-                                	xtype: 'checkboxfield',
-                                	label: 'Task 2',
-                                	checked: true
-                                }, {
-                                	xtype: 'checkboxfield',
-                                	label: 'Task 3'
-                                }, {
-                                	xtype: 'checkboxfield',
-                                	label: 'Task 4'
-                                }, {
-                                	xtype: 'checkboxfield',
-                                	label: 'Task 5'
-                                }
-                        	]
-                        },
-
-						{
-							xtype: 'fieldset',
-							title: 'Shifts',
-							items: [
-                                {
-                                	xtype: 'radiofield',
-                                	label: 'Morning Shift',
-                                	name: 'shift',
-                                	value: 'morning',
-                                	checked: true
-                                },
-								{
-									xtype: 'radiofield',
-									label: 'Night Shift',
-									name: 'shift',
-									value: 'night'
-								},
-								{
-									xtype: 'radiofield',
-									label: 'None',
-									name: 'shift',
-									value: 'none'
-								},
-							]
-						}
-                	]
-                }
-        	]
-        }
+				items: [
+					{
+						html: [
+								'<h1><b>First Name:</b> Bernadeth Mae</h1>',
+								'<br />',
+								'<h1><b>Middle Name:</b> Nagal</h1>',
+								'<br />',
+								'<h1><b>Last Name:</b> Arcigal</h1>',
+								'<br />',
+								'<h1><b>Email Address:</b> agent@cormanttect.com</h1>',
+								'<br />',
+								'<h1><b>Mobile Number</b> 0909 123 4567</h1>'
+							].join("")
+					}
+				]
+				
+			},
+			{
+				title: 'Change Password',
+				scrollable: 'vertical',
+				xtype: 'formpanel',
+				items: [
+					{
+						xtype: 'button',
+						docked: 'top',
+						ui: 'confirm-round',
+						text: 'Save Changes',
+						margin: 25
+					},
+					{
+						xtype: 'fieldset',
+						items: [
+							{
+								xtype: 'passwordfield',
+								label: 'Current Password',
+								name: 'currentPassword'
+							},
+							{
+								xtype: 'passwordfield',
+								label: 'New Password',
+								name: 'newPassword'
+							},
+							{
+								xtype: 'passwordfield',
+								label: 'Confirm Password',
+								name: 'confirmPassword'
+							}
+						]
+					}
+				]
+			}
+		]
+	}
 })

@@ -1,17 +1,25 @@
-﻿Ext.define('Sencha.view.Home', {
-    extend: 'Ext.Panel',
-    xtype: 'homePanel',
+﻿Ext.define('CocaCola.view.Home', {
+	extend: 'Ext.Panel',
+	xtype: 'home',
 
-    config: { 
-        title: 'Home',
-        iconCls: 'home',
-        cls: 'home',
-        html: [
-            '<img src="http://staging.sencha.com/img/sencha.png" />',
-            '<h1>Welcome to <b>PROJECT X</b></h1>',
-            "<p>Mobile Application for Merchandising Solution</p>",
-			"<br />",
-			"<h1><b>Cormant Technologies Inc.</b><h1>"
-        ].join("")
-    }
+	config: {
+		title: 'Home',
+		iconCls: 'home',
+		
+		items:[
+			{
+				xtype: 'titlebar',
+				title: 'Home',
+				items: [
+					{
+						xtype: 'button',
+						layout: 'fit',
+						text: 'SIGN OUT',
+						ui: 'decline-round',
+						align: 'right'
+					}
+				]
+			}
+		]
+	}
 })

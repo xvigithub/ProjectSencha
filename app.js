@@ -1,36 +1,24 @@
-﻿Ext.Loader.setConfig({
-    enabled: true
-});
+﻿Ext.application({
+	name: 'CocaCola',
 
-Ext.application({
-    name: 'Sencha',
+	models: ['StoreModel','CategoryModel','ProductCodeModel'],
 
-    controllers: ['Main'],
+	views: [
+		'Login', 'Main', 'Task',
+		'Home', 'StoreTab', 'StoreContainer',
+		'StoreList', 'CategoryList', 'CategoryContainer',
+		'ProductCodeCokeContainer', 'ProductCodeCokeList',
+		'ProductCodeSpriteContainer', 'ProductCodeSpriteList',
+		'ProductCodeRoyalContainer', 'ProductCodeRoyalList',
+		'Account','ProductDetails','InventoryDetails'
+	],
 
-    views: ['Home', 'Gallery', 'Product', 'Settings', 'Account'],
+	controllers: ['Login','StoreList','CategoryList','ProductCode'],
 
-    launch: function () {
-        Ext.create('Ext.TabPanel', {
-            fullscreen: true,
-            tabBarPosition: 'bottom',
+	stores: ['StoreStore', 'CategoriesStore', 'ProductCodeCokeStore', 'ProductCodeSpriteStore','ProductCodeRoyalStore'],
 
-            items: [
-                {
-                    xtype: 'homePanel'
-                },
-                {
-                    xtype: 'galleryPanel'
-                },
-                {
-                    xtype: 'productPanel'
-                },
-                {
-                    xtype: 'accountPanel'
-                },
-                {
-                    xtype: 'settingsPanel'
-                }
-            ]
-        });
-    }
+	launch: function ()
+	{
+		Ext.Viewport.add(Ext.create('CocaCola.view.Login'));
+	}
 })
