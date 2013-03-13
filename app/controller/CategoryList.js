@@ -26,7 +26,33 @@
 
 					//console.log(record.data.name);
 				}
+			},
+			'categoryList searchfield[itemId=searchBox]': {
+				clearicontap: 'onClearSearch',
+				keyup: 'onSearchKeyUp'
 			}
 		}
+	},
+	onSearchKeyUp: function (searchField) {
+		queryString = searchField.getValue();
+
+		var store = Ext.getStore('CategoriesStore');
+		store.clearFilter();
+
+		if (queryString) {
+			var regExp = new RegExp(queryString, "i");
+			store.filterBy(function (record) {
+				if (regExp.test(record.get('name'))) {
+					return true;
+				};
+				return false;
+			});
+		}
+	},
+
+	onClearSearch: function ()
+	{
+		var store = Ext.getStore('CategoriesStore');
+		store.clearFilter();
 	}
 })

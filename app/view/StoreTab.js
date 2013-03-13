@@ -8,6 +8,9 @@
 
 		items: [
 			{
+				xtype: 'spacer'
+			},
+			{
 				xtype: 'storeList'
 			}
 		]

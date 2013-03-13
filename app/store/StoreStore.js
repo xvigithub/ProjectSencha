@@ -3,22 +3,23 @@
 
 	config: {
 		model: 'CocaCola.model.StoreModel',
+		autoLoad: true,
 		data: [
 			{
 				name: 'Shopwise'
 			},
 			{
-				name: 'Rustans'
-			},
-			{
-				name: 'PureGold'
+				name: 'Unimec'
 			},
 			{
 				name: 'Super8'
 			},
 			{
-				name: 'UniMec'
+				name: 'Pure Gold'
 			},
+			{
+				name: 'Walter Mart'
+			}
 		]
 	}
 })
